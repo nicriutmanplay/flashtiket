@@ -20,4 +20,9 @@ defmodule Flashtiket.PlanillaController do
         end
     end
 
+    def index(conn, _params) do
+        planilla = Repo.all(Flashtiket.Planilla)
+        render conn, "index.html", planilla: planilla
+    end  
+
 end

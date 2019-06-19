@@ -2,5 +2,6 @@
 <h2>bienvenido a flashtiket</h2>
 <p class="lead">admin.</p>
 <li><%= link "crear planilla", to: planilla_path(@conn, :new) %></li>
+<li><%= link "ver planillas", to: planilla_path(@conn, :index) %></li>
 </ol>
 </div>

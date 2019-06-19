@@ -1,0 +1,8 @@
+<h1>listas planilla</h1>
+<table class="table">
+<%= for planilla <- @planilla do %>
+<tr>
+<td><%= render "planilla.html", planilla: planilla %></td>
+</tr>
+<% end %>
+</table>

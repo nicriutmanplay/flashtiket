@@ -20,7 +20,7 @@ defmodule Flashtiket.Router do
     get "/", PageController, :index
     get "/admins", AdminController, :index
     get "/clientes", ClienteController, :index
-    resources "/planillas", PlanillaController, only: [:new, :create]
+    resources "/planillas", PlanillaController, only: [:new, :create, :index]
     resources "/users", UserController, only: [:index, :show, :new, :create]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
