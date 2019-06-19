@@ -7,7 +7,7 @@ defmodule Flashtiket.Repo.Migrations.CrearPlanilla do
     add :hora, :string
     add :codigo, :string
     add :bus, :string
-    add :condutor, :string
+    add :conductor, :string
    
     timestamps
     end

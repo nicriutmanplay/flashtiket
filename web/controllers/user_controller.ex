@@ -6,11 +6,18 @@ defmodule Flashtiket.UserController do
     def create(conn, %{"user" => user_params}) do
         changeset = User.registration_changeset(%User{}, user_params)
         case Repo.insert(changeset) do
-            {:ok, user} ->
-                conn
+            {:ok, user} ->  
+                if(user.rol == "admin") do
+                    conn
                 |> Flashtiket.Auth.login(user)
                 |> put_flash(:info, "#{user.name} created!")
-                |> redirect(to: user_path(conn, :index))
+                |> redirect(to: admin_path(conn, :index))
+                else
+                    conn
+                |> Flashtiket.Auth.login(user)
+                |> put_flash(:info, "#{user.name} created!")
+                |> redirect(to: cliente_path(conn, :index))
+                end                             
             {:error, changeset} ->
                 render(conn, "new.html", changeset: changeset)
         end

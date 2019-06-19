@@ -14,7 +14,6 @@ defmodule Flashtiket.Planilla do
         def changeset(model, params \\ %{}) do
             model
             |> cast(params, ~w(fecha hora codigo bus conductor), [])
-            |> validate_length(:hora, min: 1, max: 7)
         end
 
 end
