@@ -1,2 +1,9 @@
-<h1>Showing User</h1>
-<%= render "user.html", user: @user %>
+<h1>datos del Usuario</h1>
+id: (<%= @user.id %>)<br/>
+<b>nombre: <%= name(@user) %></b> <br/>
+<b>apellido: <%= surname(@user) %></b><br/>
+<b>cedula: <%= cc(@user) %></b><br/>
+<b>telefono: <%= telefono(@user) %></b><br/>
+<b>rol: <%= rol(@user) %></b><br/>
+<b>correo: <%= correo(@user) %></b><br/>
+<b>nombre de usuario: <%= username(@user) %></b>
