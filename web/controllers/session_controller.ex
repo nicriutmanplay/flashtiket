@@ -10,9 +10,15 @@ defmodule Flashtiket.SessionController do
     case Flashtiket.Auth.login_by_username_and_pass(conn, user, pass, repo:
                                                 Repo) do
         {:ok, conn} ->
-            conn
-            |> put_flash(:info, "Welcome back!")
-            |> redirect(to: page_path(conn, :index))
+            if(conn.assigns.current_user.rol == "admin") do
+                conn
+                |> put_flash(:info, "Welcome back!")
+                |> redirect(to: admin_path(conn, :index))
+            else
+                conn
+                |> put_flash(:info, "Welcome back!")
+                |> redirect(to: cliente_path(conn, :index))
+            end             
         {:error, _reason, conn} ->
             conn
             |> put_flash(:error, "Invalid username/password combination")

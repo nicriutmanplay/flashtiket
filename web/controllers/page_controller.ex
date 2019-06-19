@@ -4,4 +4,13 @@ defmodule Flashtiket.PageController do
   def index(conn, _params) do
     render conn, "index.html"
   end
+
+  #def admin(conn, _params) do
+   # render conn, "admin.html"
+  #end
+
+  #def cliente(conn, _params) do
+   # render conn, "cliente.html"
+  #end
+
 end

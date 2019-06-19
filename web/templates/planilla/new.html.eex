@@ -1,0 +1,33 @@
+<h1>crear planilla</h1>
+<%= form_for @changeset, plailla_path(@conn, :create), fn f -> %>
+<%= if @changeset.action do %>
+<div class="alert alert-danger">
+<p>¡Huy! Algo salió mal! Por favor, compruebe los errores a continuación.</p>
+</div>
+<% end %>
+<div class="form-group">
+<%= text_input f, :fecha, placeholder: "DD/MM/AAAA", class: "form-control" %>
+<%= error_tag f, :fecha %>
+</div>
+<div class="form-group">
+<%= text_input f, :hora, placeholder: "H:MN pm/am", class: "form-control" %>
+<%= error_tag f, :hora %>
+</div>
+<div class="form-group">
+<%= text_input f, :codigo, placeholder: "codigo bus", class: "form-control" %>
+<%= error_tag f, :codigo %>
+</div>
+<div class="form-group">
+<%= text_input f, :bus, placeholder: "numero interno bus", class: "form-control" %>
+<%= error_tag f, :bus %>
+</div>
+<div class="form-group">
+<%= text_input f, :conductor, placeholder: "cc conductor", class: "form-control" %>
+<%= error_tag f, :conductor %>
+</div>
+<div class="form-group">
+<%= password_input f, :password, placeholder: "Password", class: "form-control" %>
+<%= error_tag f, :password %>
+</div>
+<%= submit "crear pĺanilla", class: "btn btn-primary" %>
+<% end %>

@@ -22,7 +22,7 @@
 <%= error_tag f, :telefono %>
 </div>
 <div class="form-group">
-<%= text_input f, :rol, placeholder: "rol", class: "form-control" %>
+<%= text_input f, :rol, class: "form-control", value: "cliente" %>
 <%= error_tag f, :rol %>
 </div>
 <div class="form-group">

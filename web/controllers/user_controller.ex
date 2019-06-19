@@ -40,6 +40,6 @@ defmodule Flashtiket.UserController do
     def index(conn, _params) do
         users = Repo.all(Flashtiket.User)
         render conn, "index.html", users: users
-    end
+    end    
 
 end

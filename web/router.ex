@@ -18,6 +18,8 @@ defmodule Flashtiket.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/admins", AdminController, :index
+    get "/clientes", ClienteController, :index
     resources "/users", UserController, only: [:index, :show, :new, :create]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
