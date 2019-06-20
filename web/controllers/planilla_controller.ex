@@ -1,14 +1,25 @@
 defmodule Flashtiket.PlanillaController do
     use Flashtiket.Web, :controller
-    alias Flashtiket.Planilla
+    alias Flashtiket.Planilla    
+
+    def filtro(conn, _) do
+        render conn, "filtro.html"
+    end
 
     def new(conn, _params) do
         changeset = Planilla.changeset(%Planilla{})
         render conn, "new.html", changeset: changeset
     end
 
+    def index(conn, %{"fecha" => %{"fecha" => fechas}}) do
+        query = from u in Planilla,
+          where: u.fecha == ^fechas,
+          select: %{fecha: u.fecha, hora: u.hora, codigo: u.codigo, bus: u.bus, conductor: u.conductor}
+        planilla = Repo.all(query)
+        render conn, "index.html", planilla: planilla
+    end 
+
     def create(conn, %{"planilla" => planilla_params}) do
-        IO.inspect(planilla_params)
         changeset = Planilla.changeset(%Planilla{}, planilla_params)
         case Repo.insert(changeset) do
             {:ok, planilla} ->
@@ -18,11 +29,7 @@ defmodule Flashtiket.PlanillaController do
             {:error, changeset} ->
                 render(conn, "new.html", changeset: changeset)
         end
-    end
-
-    def index(conn, _params) do
-        planilla = Repo.all(Flashtiket.Planilla)
-        render conn, "index.html", planilla: planilla
-    end  
+    end           
 
 end
+    

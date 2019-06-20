@@ -1,1 +1,7 @@
-<b><%= datos(@planilla) %></b>
+<div>
+<b>fecha: <%= fecha(@planilla) %></b><br>
+<b>hora: <%= hora(@planilla) %></b><br>
+<b>codigo: <%= codigo(@planilla) %></b><br>
+<b>bus: <%= bus(@planilla) %></b><br>
+<b>conductor: <%= conductor(@planilla) %></b><br>
+</div>
