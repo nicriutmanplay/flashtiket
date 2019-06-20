@@ -1,5 +1,5 @@
 <h1>buscar planilla por fecha</h1>
-<%= form_for @conn, planilla_path(@conn, :index), [as: :fecha], fn f -> %>
+<%= form_for @conn, filtro_path(@conn, :index), [as: :fecha], fn f -> %>
 <div class="form-group">
 <%= text_input f, :fecha, placeholder: "dd/mm/aaaa", class: "form-control" %>
 </div>
