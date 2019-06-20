@@ -1,0 +1,7 @@
+<h1>buscar usuario por cedula</h1>
+<%= form_for @conn, filtrouser_path(@conn, :index), [as: :cc], fn f -> %>
+<div class="form-group">
+<%= text_input f, :cc, placeholder: "cc", class: "form-control" %>
+</div>
+<%= submit "buscar", class: "btn btn-primary" %>
+<% end %>

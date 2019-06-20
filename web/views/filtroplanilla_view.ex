@@ -1,4 +1,4 @@
-defmodule Flashtiket.FiltroView do
+defmodule Flashtiket.FiltroplanillaView do
     use Flashtiket.Web, :view
     
     def fecha(%{fecha: fecha}) do

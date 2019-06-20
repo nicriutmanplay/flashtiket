@@ -1,9 +1,9 @@
-defmodule Flashtiket.FiltroController do
+defmodule Flashtiket.FiltroplanillaController do
     use Flashtiket.Web, :controller
     alias Flashtiket.Planilla  
 
     def filtro(conn, _) do
-        render conn, "filtro.html"
+        render conn, "filtroplanilla.html"
     end
 
     def index(conn, %{"fecha" => %{"fecha" => fechas}}) do

@@ -1,9 +1,0 @@
-<h1>listar usuarios</h1>
-<table class="table">
-<%= for user <- @users do %>
-<tr>
-<td><b><%= cc(user) %></b> (<%= user.id %>)</td>
-<td><%= link "View", to: user_path(@conn, :show, user.id) %></td>
-</tr>
-<% end %>
-</table>

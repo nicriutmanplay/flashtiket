@@ -1,5 +1,4 @@
-<h1>datos del Usuario</h1>
-id: (<%= @user.id %>)<br/>
+<div>
 <b>nombre: <%= name(@user) %></b> <br/>
 <b>apellido: <%= surname(@user) %></b><br/>
 <b>cedula: <%= cc(@user) %></b><br/>
@@ -7,3 +6,4 @@ id: (<%= @user.id %>)<br/>
 <b>rol: <%= rol(@user) %></b><br/>
 <b>correo: <%= correo(@user) %></b><br/>
 <b>nombre de usuario: <%= username(@user) %></b>
+</div>
