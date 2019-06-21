@@ -25,5 +25,9 @@
 <%= text_input f, :conductor, placeholder: "cc conductor", class: "form-control" %>
 <%= error_tag f, :conductor %>
 </div>
+<div class="form-group">
+<%= text_input f, :estado, value: "activa", class: "form-control" %>
+<%= error_tag f, :estado %>
+</div>
 <%= submit "crear pĺanilla", class: "btn btn-primary" %>
 <% end %>

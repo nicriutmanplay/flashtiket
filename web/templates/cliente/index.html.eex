@@ -1,4 +1,5 @@
 <div class="jumbotron">
 <h2>bienvenido a flashtiket</h2>
 <p class="lead">cliente</p>
+<li><%= link "buscar planillas", to: filtroplanillacliente_path(@conn, :activas) %></li>
 </div>

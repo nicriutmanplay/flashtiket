@@ -7,13 +7,14 @@ defmodule Flashtiket.Planilla do
         field :codigo, :string
         field :bus, :string
         field :conductor, :string
+        field :estado, :string
     
         timestamps
         end
 
         def changeset(model, params \\ %{}) do
             model
-            |> cast(params, ~w(fecha hora codigo bus conductor), [])
+            |> cast(params, ~w(fecha hora codigo bus conductor estado), [])
         end
 
 end
