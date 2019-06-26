@@ -1,8 +1,23 @@
-<h1>listas planilla</h1>
+<h1>lista planillas</h1>
 <table class="table">
 <%= for planilla <- @planilla do %>
 <tr>
-<td><%= render "planilla.html", planilla: planilla %></td>
+<td><div>
+<b>fecha: <%= fecha(planilla) %></b><br>
+<b>hora: <%= hora(planilla) %></b><br>
+<b>codigo: <%= codigo(planilla) %></b><br>
+<b>bus: <%= bus(planilla) %></b><br>
+<b>conductor: <%= conductor(planilla) %></b><br>
+<%= form_for @conn, filtroplanillacliente_path(@conn, :reserva), [as: :reservas], fn f -> %>
+<div class="form-group">
+<%= text_input f, :cantidad, placeholder: "cantidad", class: "form-control" %>
+</div>
+<div class="form-group">
+<%= text_input f, :id, value: planilla.id, class: "form-control" %>
+</div>
+<%= submit "reservar", class: "btn btn-primary" %>
+<% end %>
+</div></td>
 </tr>
 <% end %>
 </table>

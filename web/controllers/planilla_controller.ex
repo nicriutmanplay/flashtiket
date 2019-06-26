@@ -7,7 +7,7 @@ defmodule Flashtiket.PlanillaController do
         render conn, "new.html", changeset: changeset
     end    
 
-    def create(conn, %{"planilla" => planilla_params}) do
+    def create(conn, %{"planilla" => planilla_params}) do        
         changeset = Planilla.changeset(%Planilla{}, planilla_params)
         case Repo.insert(changeset) do
             {:ok, planilla} ->
