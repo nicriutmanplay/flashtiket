@@ -4,6 +4,7 @@
 <tr>
 <td><div>
 <b>id planilla: <%= id(reserva) %></b><br>
+<b>cedula cliente: <%= cc(reserva) %></b><br>
 <b>cantidad de puestos: <%= cantidad(reserva) %></b><br>
 <% end %>
 </div></td>

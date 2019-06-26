@@ -4,5 +4,6 @@
 <li><%= link "crear planilla", to: planilla_path(@conn, :new) %></li>
 <li><%= link "buscar planillas", to: filtroplanilla_path(@conn, :filtro) %></li>
 <li><%= link "buscar usuarios", to: filtrouser_path(@conn, :filtro) %></li>
+<li><%= link "buscar reservas", to: filtroreservaadmin_path(@conn, :reservas) %></li>
 </ol>
 </div>
