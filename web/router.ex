@@ -26,6 +26,7 @@ defmodule Flashtiket.Router do
     post "/filtrouser", FiltrouserController, :index
     get "/filtroplanillacliente", FiltroplanillaclienteController, :activas
     post "/filtroplanillacliente", FiltroplanillaclienteController, :reserva
+    get "/Filtroreservacliente", FiltroreservaclienteController, :activas
     resources "/planillas", PlanillaController, only: [:new, :create]
     resources "/users", UserController, only: [:index, :show, :new, :create]
     resources "/sessions", SessionController, only: [:new, :create, :delete]

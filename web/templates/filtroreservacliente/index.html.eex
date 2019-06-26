@@ -1,0 +1,10 @@
+<h1>lista planillas</h1>
+<table class="table">
+<%= for reserva <- @reserva do %>
+<tr>
+<td><div>
+<b>id planilla: <%= id(reserva) %></b><br>
+<b>cantidad: <%= cantidad(reserva) %></b><br>
+<% end %>
+</div></td>
+</table>
