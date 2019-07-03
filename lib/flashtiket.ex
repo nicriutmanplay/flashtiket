@@ -13,6 +13,7 @@ defmodule Flashtiket do
       # Start the endpoint when the application starts
       supervisor(Flashtiket.Endpoint, []),
       # Start your own worker by calling: Flashtiket.Worker.start_link(arg1, arg2, arg3)
+      supervisor(Flashtiket.InfoSys.Supervisor, []), # new supervisor
       # worker(Flashtiket.Worker, [arg1, arg2, arg3]),
     ]
 
